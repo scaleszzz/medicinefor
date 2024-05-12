@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Information</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="my-4">Patient Educational History</h1>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th>School Name</th>
+      <th>Grade Level</th>
+      <th>Special Education Service</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="history : ${educational_history}">
+      <td th:text="${history.schoolName}"></td>
+      <td th:text="${history.gradeLevel}"></td>
+      <td th:text="${history.specialEdService ? 'Yes' : 'No'}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

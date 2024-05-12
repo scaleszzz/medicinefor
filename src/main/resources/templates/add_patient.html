@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Patient</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h1>Add New Patient</h1>
+  <form action="/patients/add" method="post">
+    <div class="form-group">
+      <label for="firstname">First Name:</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" required>
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name:</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" required>
+    </div>
+    <div class="form-group">
+      <label for="birthDate">Birth Date:</label>
+      <input type="date" class="form-control" id="birthDate" name="birthDate" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select class="form-control" id="gender" name="gender" required>
+        <option value="MALE">Male</option>
+        <option value="FEMALE">Female</option>
+      </select>
+    </div>
+
+    <h1>Educational History</h1>
+    <div class="form-group">
+      <label for="schoolName">School Name:</label>
+      <input type="text" class="form-control" id="schoolName" name="schoolName" required>
+    </div>
+    <div class="form-group">
+      <label for="gradeLevel">Grade Level:</label>
+      <input type="text" class="form-control" id="gradeLevel" name="gradeLevel" required>
+    </div>
+    <div class="form-group">
+      <label for="specialEdService">Special Education Service:</label>
+      <select class="form-control" id="specialEdService" name="specialEdService" required>
+        <option value="YES">YES</option>
+        <option value="NO">NO</option>
+      </select>
+    </div>
+
+    <h1>Appointment</h1>
+    <div class="form-group">
+      <label for="appointmentDate">Appointment Date:</label>
+      <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" required>
+    </div>
+    <div class="form-group">
+      <label for="appointmentType">Appointment Type:</label>
+      <input type="text" class="form-control" id="appointmentType" name="appointmentType" required>
+    </div>
+    <div class="form-group">
+      <label for="notes">Notes:</label>
+      <textarea class="form-control" id="notes" name="notes"></textarea>
+    </div>
+
+    <h1>Autism</h1>
+    <div class="form-group">
+      <label for="diagnosisDate">diagnosis Date:</label>
+      <input type="date" class="form-control" id="diagnosisDate" name="diagnosisDate" required>
+    </div>
+    <div class="form-group">
+      <label for="autismType">autism Type:</label>
+      <select class="form-control" id="autismType" name="autismType" required>
+        <option value="ASPERGERS">ASPERGERS</option>
+        <option value="AUTISTIC_DISORDER">AUTISTIC_DISORDER</option>
+        <option value="PDD_NOS">PDD_NOS</option>
+        <option value="OTHER">OTHER</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="SeverityLevel">Severity Level:</label>
+      <select class="form-control" id="SeverityLevel" name="SeverityLevel" required>
+        <option value="MILD">MILD</option>
+        <option value="MODERATE">MODERATE</option>
+        <option value="SEVERE">SEVERE</option>
+      </select>
+    </div>
+
+    <h1>Behavioral Session</h1>
+    <div class="form-group">
+      <label for="duration">Duration: </label>
+      <input type="number" class="form-control" id="duration" name="duration" required>
+    </div>
+    <div class="form-group">
+      <label for="focusArea">Focus Area:</label>
+      <input type="text" class="form-control" id="focusArea" name="focusArea" required>
+    </div>
+
+
+    <h1>Test</h1>
+    <div class="form-group">
+      <label for="testType">Test Type:</label>
+      <input type="text" class="form-control" id="testType" name="testType" required>
+    </div>
+    <div class="form-group">
+      <label for="testResult">Test Result:</label>
+      <input type="text" class="form-control" id="testResult" name="testResult" required>
+    </div>
+    <div class="form-group">
+      <label for="testDate">Test Date:</label>
+      <input type="date" class="form-control" id="testDate" name="testDate" required>
+    </div>
+
+    <h1>Symptom</h1>
+    <div class="form-group">
+      <label for="symptomDescription">Symptom Description</label>
+      <input type="text" class="form-control" id="symptomDescription" name="symptomDescription" required>
+    </div>
+    <div class="form-group">
+      <label for="observationDate">Observation Date:</label>
+      <input type="date" class="form-control" id="observationDate" name="observationDate" required>
+    </div>
+
+    <h1>Social Skills Assessment</h1>
+    <div class="form-group">
+      <label for="assessmentDate">Assessment Date:</label>
+      <input type="date" class="form-control" id="assessmentDate" name="assessmentDate" required>
+    </div>
+    <div class="form-group">
+      <label for="score">Score:</label>
+      <input type="int" class="form-control" id="score" name="score" required>
+    </div>
+    <div class="form-group">
+      <label for="notes">Notes:</label>
+      <textarea class="form-control" id="notess" name="notes"></textarea>
+    </div>
+
+    <h1>Diagnosis</h1>
+    <div class="form-group">
+      <label for="icdCode">icd Code:</label>
+      <input type="text" class="form-control" id="icdCode" name="icdCode" required>
+    </div>
+    <div class="form-group">
+      <label for="diagnosisDate">Diagnosis Date:</label>
+      <input type="date" class="form-control" id="diagnosissDate" name="diagnosisDate" required>
+    </div>
+
+    <h1>Therapie</h1>
+    <div class="form-group">
+      <label for="therapyType">Therapy Type:</label>
+      <input type="text" class="form-control" id="therapyType" name="therapyType" required>
+    </div>
+    <div class="form-group">
+      <label for="therapyDescription">Therapy Description:</label>
+      <input type="text" class="form-control" id="therapyDescription" name="therapyDescription" required>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date:</label>
+      <input type="date" class="form-control" id="startDate" name="startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input type="date" class="form-control" id="endDate" name="endDate" required>
+    </div>
+
+    <h1>Treatment</h1>
+    <div class="form-group">
+      <label for="treatmentDescription">Treatment Description:</label>
+      <input type="text" class="form-control" id="treatmentDescription" name="treatmentDescription" required>
+    </div>
+    <div class="form-group">
+      <label for="startDate">start Date:</label>
+      <input type="date" class="form-control" id="startDatee" name="startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input type="date" class="form-control" id="endDatee" name="endDate" required>
+    </div>
+
+    <h1>Medication</h1>
+    <div class="form-group">
+      <label for="medicationName">Medication Name:</label>
+      <input type="text" class="form-control" id="medicationName" name="medicationName" required>
+    </div>
+    <div class="form-group">
+      <label for="dosage">Dosage:</label>
+      <input type="text" class="form-control" id="dosage" name="dosage" required>
+    </div>
+    <div class="form-group">
+      <label for="administrationPeriod">Administration Period:</label>
+      <input type="text" class="form-control" id="administrationPeriod" name="administrationPeriod" required>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <style>
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .custom-btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Patients</h1>
+    <div class="search-container">
+        <form th:action="@{/patients}" method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search by name" name="search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <a href="/patients/add" class="btn btn-primary">Add Patient</a>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Birth Date</th>
+            <th>Gender</th>
+            <th>View Details</th>
+            <th>Autism Details</th>
+            <th>Appointment</th>
+            <th>Tests</th>
+            <th>Symptoms</th>
+            <th>Social Skills Assessment</th>
+            <th>Behavioral Session</th>
+            <th>Diagnosis</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="patient : ${patients}">
+            <td th:text="${patient.firstname}"></td>
+            <td th:text="${patient.lastname}"></td>
+            <td th:text="${patient.birthDate}"></td>
+            <td th:text="${patient.gender}"></td>
+            <td>
+                <a th:href="@{/patients/view/{patientId}/education(patientId=${patient.id})}">Educational History</a>
+
+            </td>
+            <td>
+                <a th:href="@{'/patients/autism-details/' + ${patient.id}}" class="btn btn-warning custom-btn">Autism Details</a>
+            </td>
+            <td>
+                <a th:href="@{'/api/appointment/' + ${patient.id}}" class="btn custom-btn">Appointment</a>
+            </td>
+            <td>
+                <a th:href="@{'/patients/' + ${patient.id} + '/tests'}" class="btn btn-secondary custom-btn">Tests</a>
+            </td>
+            <td>
+                <a th:href="@{'/patients/' + ${patient.id} + '/symptoms'}" class="btn btn-danger custom-btn">Symptoms</a>
+            </td>
+            <td>
+                <a th:href="@{'/patients/' + ${patient.id} + '/socialSkillsAssessment'}" class="btn btn-success custom-btn">Social Skills Assessment</a>
+            </td>
+            <td>
+                <a th:href="@{'/api/behavioral-sessions/' + ${patient.id}}" class="btn btn-info custom-btn">Behavioral Session</a>
+            </td>
+            <td>
+                <a th:href="@{'/api/diagnoses/' + ${patient.id}}" class="btn btn-info custom-btn">Diagnosis</a>
+            </td>
+            <td>
+                <form th:action="@{'/patients/delete/' + ${patient.id}}" method="post">
+                    <button type="submit" class="btn btn-danger custom-btn">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

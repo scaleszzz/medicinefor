@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Autism Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h1>Autism Details</h1>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title" th:text="${patient.firstname} + ' ' + ${patient.lastname}"></h5>
+      <p class="card-text" th:text="'Birth Date: ' + ${patient.birthDate}"></p>
+      <p class="card-text" th:text="'Autism Type: ' + ${autismDetails.autismType}"></p> <!-- Change patient to autismDetails -->
+      <p class="card-text" th:text="'Severity Level: ' + ${autismDetails.severityLevel}"></p> <!-- Change patient to autismDetails -->
+    </div>
+  </div>
+</div>
+</body>
+</html>
