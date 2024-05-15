@@ -27,17 +27,7 @@ public class PatientController {
     private final TherapieRepository therapieRepository;
     private final TreatmentRepository treatmentRepository;
     private final MedicationRepository medicationRepository;
-    @Autowired
-    private PatientRepository patientRepository;
-
-//    @Autowired
-//    public PatientController(EducationalHistoryRepository educationalHistoryRepository, AppointmentRepository appointmentRepository, AutismDetailsRepository autismDetailsRepository,BehavioralSessionRepository behavioralSessionRepository,DiagnosisRepository diagnosisRepository) {
-//            this.educationalHistoryRepository = educationalHistoryRepository;
-//        this.appointmentRepository = appointmentRepository;
-//        this.autismDetailsRepository = autismDetailsRepository;
-//        this.behavioralSessionRepository = behavioralSessionRepository;
-//        this.diagnosisRepository = diagnosisRepository;
-//    }
+    private final PatientRepository patientRepository;
 
 
     @GetMapping("/")

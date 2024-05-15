@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Patients</title>
+    <title>Науқастар</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous">
@@ -19,34 +19,34 @@
 </head>
 <body>
 <div class="container">
-    <h1>Patients</h1>
+    <h1>Науқастар</h1>
     <div class="search-container">
         <form th:action="@{/patients}" method="get">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search by name" name="search">
+                <input type="text" class="form-control" placeholder="Аты бойынша іздеу" name="search">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    <button class="btn btn-outline-secondary" type="submit">Іздеу</button>
                 </div>
             </div>
         </form>
     </div>
-    <a href="/patients/add" class="btn btn-primary">Add Patient</a>
+    <a href="/patients/add" class="btn btn-primary">Науқасты қосу</a>
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Birth Date</th>
-            <th>Gender</th>
-            <th>View Details</th>
-            <th>Autism Details</th>
-            <th>Appointment</th>
-            <th>Tests</th>
-            <th>Symptoms</th>
-            <th>Social Skills Assessment</th>
-            <th>Behavioral Session</th>
-            <th>Diagnosis</th>
-            <th>Delete</th>
+            <th>Есімі</th>
+            <th>Тегі</th>
+            <th>Туылған күні</th>
+            <th>Жынысы</th>
+            <th>Мәліметтерді қарау</th>
+            <th>Аутизм туралы мәліметтер</th>
+            <th>Консультация</th>
+            <th>Тесттер</th>
+            <th>Белгілері</th>
+            <th>Әлеуметтік дағдыларды бағалау</th>
+            <th>Мінез-құлық сессиясы</th>
+            <th>Диагноз</th>
+            <th>Жою</th>
         </tr>
         </thead>
         <tbody>
@@ -56,33 +56,33 @@
             <td th:text="${patient.birthDate}"></td>
             <td th:text="${patient.gender}"></td>
             <td>
-                <a th:href="@{/patients/view/{patientId}/education(patientId=${patient.id})}">Educational History</a>
+                <a th:href="@{/patients/view/{patientId}/education(patientId=${patient.id})}">Оқу жазбалары</a>
 
             </td>
             <td>
-                <a th:href="@{'/patients/autism-details/' + ${patient.id}}" class="btn btn-warning custom-btn">Autism Details</a>
+                <a th:href="@{'/patients/autism-details/' + ${patient.id}}" class="btn btn-warning custom-btn">Аутизм туралы мәліметтер</a>
             </td>
             <td>
-                <a th:href="@{'/api/appointment/' + ${patient.id}}" class="btn custom-btn">Appointment</a>
+                <a th:href="@{'/api/appointment/' + ${patient.id}}" class="btn custom-btn">Консультация</a>
             </td>
             <td>
-                <a th:href="@{'/patients/' + ${patient.id} + '/tests'}" class="btn btn-secondary custom-btn">Tests</a>
+                <a th:href="@{'/patients/' + ${patient.id} + '/tests'}" class="btn btn-secondary custom-btn">Тесттер</a>
             </td>
             <td>
-                <a th:href="@{'/patients/' + ${patient.id} + '/symptoms'}" class="btn btn-danger custom-btn">Symptoms</a>
+                <a th:href="@{'/patients/' + ${patient.id} + '/symptoms'}" class="btn btn-danger custom-btn">Белгілері</a>
             </td>
             <td>
-                <a th:href="@{'/patients/' + ${patient.id} + '/socialSkillsAssessment'}" class="btn btn-success custom-btn">Social Skills Assessment</a>
+                <a th:href="@{'/patients/' + ${patient.id} + '/socialSkillsAssessment'}" class="btn btn-success custom-btn">Әлеуметтік дағдыларды бағалау</a>
             </td>
             <td>
-                <a th:href="@{'/api/behavioral-sessions/' + ${patient.id}}" class="btn btn-info custom-btn">Behavioral Session</a>
+                <a th:href="@{'/api/behavioral-sessions/' + ${patient.id}}" class="btn btn-info custom-btn">Мінез-құлық сессиясы</a>
             </td>
             <td>
-                <a th:href="@{'/api/diagnoses/' + ${patient.id}}" class="btn btn-info custom-btn">Diagnosis</a>
+                <a th:href="@{'/api/diagnoses/' + ${patient.id}}" class="btn btn-info custom-btn">Диагноз</a>
             </td>
             <td>
                 <form th:action="@{'/patients/delete/' + ${patient.id}}" method="post">
-                    <button type="submit" class="btn btn-danger custom-btn">Delete</button>
+                    <button type="submit" class="btn btn-danger custom-btn">Жою</button>
                 </form>
             </td>
         </tr>

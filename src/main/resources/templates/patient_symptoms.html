@@ -2,25 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Patient Symptoms</title>
+    <title>Науқастың белгілері</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-    <h1>Patient Symptoms</h1>
+    <h1>Науқастың белгілері</h1>
     <div class="card">
         <div class="card-body">
             <h5 class="card-title" th:text="${patient.firstname + ' ' + patient.lastname}"></h5>
             <p class="card-text" th:text="'Birth Date: ' + ${patient.birthDate}"></p>
             <p class="card-text" th:text="'Gender: ' + ${patient.gender}"></p>
-            <h5 class="card-title">Symptoms</h5>
+            <h5 class="card-title">Белгілері</h5>
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Symptom Description</th>
-                    <th>Observation Date</th>
+                    <th>Симптом сипаттамасы</th>
+                    <th>Бақылау күні</th>
                 </tr>
                 </thead>
                 <tbody>
