@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -49,7 +50,7 @@ public class PatientController {
         appointmentRepository.save(appointment);
         autismDetails.setPatient(patient1);
         autismDetailsRepository.save(autismDetails);
-        behavioralSession.setSessionId("Nurs");
+        behavioralSession.setSessionId("ass");
         behavioralSession.setPatient(patient1);
         behavioralSessionRepository.save(behavioralSession);
         diagnosis.setPatient(patient1);
